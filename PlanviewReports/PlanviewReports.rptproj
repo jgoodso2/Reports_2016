@@ -17,6 +17,14 @@
       <Name>Upgraded Portfolio Status (Client - HCA).rdl</Name>
       <FullPath>Upgraded Portfolio Status (Client - HCA).rdl</FullPath>
     </ProjectItem>
+    <ProjectItem>
+      <Name>single row Upgraded Portfolio Status (Client - HCA) - Copy.rdl</Name>
+      <FullPath>single row Upgraded Portfolio Status (Client - HCA) - Copy.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>single column.rdl</Name>
+      <FullPath>single column.rdl</FullPath>
+    </ProjectItem>
   </Reports>
   <Configurations>
     <Configuration>

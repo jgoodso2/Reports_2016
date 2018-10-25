@@ -3078,6 +3078,25 @@
       </DefaultValue>
       <Hidden>true</Hidden>
     </ReportParameter>
+    <ReportParameter Name="ParmProjectsAllowed">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <DataSetReference>
+          <DataSetName>dsProjectsAllowed</DataSetName>
+          <ValueField>Proj_UID_Allowed</ValueField>
+        </DataSetReference>
+      </DefaultValue>
+      <Prompt>Projects Allowed</Prompt>
+      <Hidden>true</Hidden>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>dsProjectsAllowed</DataSetName>
+          <ValueField>Proj_UID_Allowed</ValueField>
+          <LabelField>ProjectName</LabelField>
+        </DataSetReference>
+      </ValidValues>
+      <MultiValue>true</MultiValue>
+    </ReportParameter>
     <ReportParameter Name="ParmReportingStart">
       <DataType>DateTime</DataType>
       <DefaultValue>
@@ -3520,23 +3539,23 @@
       <MultiValue>true</MultiValue>
       <UsedInQuery>True</UsedInQuery>
     </ReportParameter>
-    <ReportParameter Name="ParmBusinessOwner">
+    <ReportParameter Name="ParmKeyTasks">
       <DataType>String</DataType>
       <DefaultValue>
         <DataSetReference>
-          <DataSetName>prm3_BusinessOwner</DataSetName>
-          <ValueField>BusinessOwner</ValueField>
+          <DataSetName>prmKeyTasks</DataSetName>
+          <ValueField>TaskValue</ValueField>
         </DataSetReference>
       </DefaultValue>
-      <Prompt>Business Owner:</Prompt>
+      <Prompt>Show Key Tasks:</Prompt>
+      <Hidden>true</Hidden>
       <ValidValues>
         <DataSetReference>
-          <DataSetName>prm3_BusinessOwner</DataSetName>
-          <ValueField>BusinessOwner</ValueField>
-          <LabelField>BusinessOwner</LabelField>
+          <DataSetName>prmKeyTasks</DataSetName>
+          <ValueField>TaskValue</ValueField>
+          <LabelField>TaskValue</LabelField>
         </DataSetReference>
       </ValidValues>
-      <MultiValue>true</MultiValue>
       <UsedInQuery>True</UsedInQuery>
     </ReportParameter>
     <ReportParameter Name="ParmMilestones">
@@ -3558,60 +3577,23 @@
       </ValidValues>
       <UsedInQuery>True</UsedInQuery>
     </ReportParameter>
-    <ReportParameter Name="ParmKeyTasks">
+    <ReportParameter Name="ParmBusinessOwner">
       <DataType>String</DataType>
       <DefaultValue>
         <DataSetReference>
-          <DataSetName>prmKeyTasks</DataSetName>
-          <ValueField>TaskValue</ValueField>
+          <DataSetName>prm3_BusinessOwner</DataSetName>
+          <ValueField>BusinessOwner</ValueField>
         </DataSetReference>
       </DefaultValue>
-      <Prompt>Show Key Tasks:</Prompt>
-      <Hidden>true</Hidden>
+      <Prompt>Business Owner:</Prompt>
       <ValidValues>
         <DataSetReference>
-          <DataSetName>prmKeyTasks</DataSetName>
-          <ValueField>TaskValue</ValueField>
-          <LabelField>TaskValue</LabelField>
+          <DataSetName>prm3_BusinessOwner</DataSetName>
+          <ValueField>BusinessOwner</ValueField>
+          <LabelField>BusinessOwner</LabelField>
         </DataSetReference>
       </ValidValues>
-      <UsedInQuery>True</UsedInQuery>
-    </ReportParameter>
-    <ReportParameter Name="ParmAllTasks">
-      <DataType>String</DataType>
-      <DefaultValue>
-        <DataSetReference>
-          <DataSetName>prmAllTasks</DataSetName>
-          <ValueField>TaskValue</ValueField>
-        </DataSetReference>
-      </DefaultValue>
-      <Prompt>Show All Tasks</Prompt>
-      <Hidden>true</Hidden>
-      <ValidValues>
-        <DataSetReference>
-          <DataSetName>prmAllTasks</DataSetName>
-          <ValueField>TaskValue</ValueField>
-          <LabelField>TaskValue</LabelField>
-        </DataSetReference>
-      </ValidValues>
-    </ReportParameter>
-    <ReportParameter Name="ParmDeliverables">
-      <DataType>String</DataType>
-      <DefaultValue>
-        <DataSetReference>
-          <DataSetName>prmDeliverables</DataSetName>
-          <ValueField>TaskValue</ValueField>
-        </DataSetReference>
-      </DefaultValue>
-      <Prompt>Show Deliverables Tasks</Prompt>
-      <Hidden>true</Hidden>
-      <ValidValues>
-        <DataSetReference>
-          <DataSetName>prmDeliverables</DataSetName>
-          <ValueField>TaskValue</ValueField>
-          <LabelField>TaskValue</LabelField>
-        </DataSetReference>
-      </ValidValues>
+      <MultiValue>true</MultiValue>
       <UsedInQuery>True</UsedInQuery>
     </ReportParameter>
     <ReportParameter Name="ParmServiceLine">
@@ -3690,24 +3672,23 @@
       </ValidValues>
       <MultiValue>true</MultiValue>
     </ReportParameter>
-    <ReportParameter Name="ParmProjectsAllowed">
+    <ReportParameter Name="ParmAllTasks">
       <DataType>String</DataType>
       <DefaultValue>
         <DataSetReference>
-          <DataSetName>dsProjectsAllowed</DataSetName>
-          <ValueField>Proj_UID_Allowed</ValueField>
+          <DataSetName>prmAllTasks</DataSetName>
+          <ValueField>TaskValue</ValueField>
         </DataSetReference>
       </DefaultValue>
-      <Prompt>Projects Allowed</Prompt>
+      <Prompt>Show All Tasks</Prompt>
       <Hidden>true</Hidden>
       <ValidValues>
         <DataSetReference>
-          <DataSetName>dsProjectsAllowed</DataSetName>
-          <ValueField>Proj_UID_Allowed</ValueField>
-          <LabelField>ProjectName</LabelField>
+          <DataSetName>prmAllTasks</DataSetName>
+          <ValueField>TaskValue</ValueField>
+          <LabelField>TaskValue</LabelField>
         </DataSetReference>
       </ValidValues>
-      <MultiValue>true</MultiValue>
     </ReportParameter>
     <ReportParameter Name="ParmProjectName">
       <DataType>String</DataType>
@@ -4001,6 +3982,25 @@
         </ParameterValues>
       </ValidValues>
     </ReportParameter>
+    <ReportParameter Name="ParmDeliverables">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <DataSetReference>
+          <DataSetName>prmDeliverables</DataSetName>
+          <ValueField>TaskValue</ValueField>
+        </DataSetReference>
+      </DefaultValue>
+      <Prompt>Show Deliverables Tasks</Prompt>
+      <Hidden>true</Hidden>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>prmDeliverables</DataSetName>
+          <ValueField>TaskValue</ValueField>
+          <LabelField>TaskValue</LabelField>
+        </DataSetReference>
+      </ValidValues>
+      <UsedInQuery>True</UsedInQuery>
+    </ReportParameter>
     <ReportParameter Name="ParmDisplayProjectDescription">
       <DataType>Boolean</DataType>
       <DefaultValue>
@@ -4189,8 +4189,8 @@
   </ReportParameters>
   <ReportParametersLayout>
     <GridLayoutDefinition>
-      <NumberOfColumns>2</NumberOfColumns>
-      <NumberOfRows>32</NumberOfRows>
+      <NumberOfColumns>4</NumberOfColumns>
+      <NumberOfRows>27</NumberOfRows>
       <CellDefinitions>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
@@ -4198,128 +4198,128 @@
           <ParameterName>UserID</ParameterName>
         </CellDefinition>
         <CellDefinition>
-          <ColumnIndex>0</ColumnIndex>
-          <RowIndex>17</RowIndex>
+          <ColumnIndex>2</ColumnIndex>
+          <RowIndex>0</RowIndex>
           <ParameterName>ParmProjectsAllowed</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
-          <RowIndex>2</RowIndex>
+          <RowIndex>1</RowIndex>
           <ParameterName>ParmReportingStart</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>1</ColumnIndex>
-          <RowIndex>2</RowIndex>
+          <RowIndex>1</RowIndex>
           <ParameterName>ParmReportingFinish</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
-          <RowIndex>3</RowIndex>
+          <RowIndex>2</RowIndex>
           <ParameterName>UpcomingPeriod</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
-          <RowIndex>4</RowIndex>
+          <RowIndex>3</RowIndex>
           <ParameterName>GroupBy1</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>1</ColumnIndex>
-          <RowIndex>4</RowIndex>
+          <RowIndex>3</RowIndex>
           <ParameterName>GroupBy2</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
-          <RowIndex>5</RowIndex>
+          <RowIndex>4</RowIndex>
           <ParameterName>GroupBy3</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>1</ColumnIndex>
-          <RowIndex>5</RowIndex>
+          <RowIndex>4</RowIndex>
           <ParameterName>ParmBaselineNonBaseline</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
-          <RowIndex>6</RowIndex>
+          <RowIndex>5</RowIndex>
           <ParameterName>ParmActiveStatus</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>1</ColumnIndex>
-          <RowIndex>6</RowIndex>
+          <RowIndex>5</RowIndex>
           <ParameterName>ParmProjectSponsor</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
-          <RowIndex>7</RowIndex>
+          <RowIndex>6</RowIndex>
           <ParameterName>ParmProjectClient</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>1</ColumnIndex>
-          <RowIndex>7</RowIndex>
+          <RowIndex>6</RowIndex>
           <ParameterName>ParmIncludeSubsidiaries</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
-          <RowIndex>8</RowIndex>
+          <RowIndex>7</RowIndex>
           <ParameterName>ParmClientSubsidiaries</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>1</ColumnIndex>
-          <RowIndex>8</RowIndex>
+          <RowIndex>7</RowIndex>
           <ParameterName>ParmPMAllocation</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
-          <RowIndex>9</RowIndex>
+          <RowIndex>8</RowIndex>
           <ParameterName>ParmShellProjects</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>1</ColumnIndex>
-          <RowIndex>9</RowIndex>
+          <RowIndex>8</RowIndex>
           <ParameterName>ParmOutcomesExpected</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
-          <RowIndex>11</RowIndex>
+          <RowIndex>10</RowIndex>
           <ParameterName>ParmPMNotes</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>1</ColumnIndex>
-          <RowIndex>11</RowIndex>
+          <RowIndex>10</RowIndex>
           <ParameterName>ParmDisplayUpcomingActivities</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
-          <RowIndex>12</RowIndex>
+          <RowIndex>11</RowIndex>
           <ParameterName>ParmUpcomingActivities</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>1</ColumnIndex>
-          <RowIndex>13</RowIndex>
+          <RowIndex>11</RowIndex>
           <ParameterName>ParmKeyTasks</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
-          <RowIndex>13</RowIndex>
+          <RowIndex>12</RowIndex>
           <ParameterName>ParmMilestones</ParameterName>
         </CellDefinition>
         <CellDefinition>
-          <ColumnIndex>1</ColumnIndex>
-          <RowIndex>14</RowIndex>
+          <ColumnIndex>2</ColumnIndex>
+          <RowIndex>21</RowIndex>
           <ParameterName>ParmDeliverables</ParameterName>
         </CellDefinition>
         <CellDefinition>
-          <ColumnIndex>0</ColumnIndex>
+          <ColumnIndex>2</ColumnIndex>
           <RowIndex>14</RowIndex>
           <ParameterName>ParmAllTasks</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
-          <RowIndex>10</RowIndex>
+          <RowIndex>9</RowIndex>
           <ParameterName>ParmProjectCategory</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>1</ColumnIndex>
-          <RowIndex>10</RowIndex>
+          <RowIndex>9</RowIndex>
           <ParameterName>ParmFunctionalArea</ParameterName>
         </CellDefinition>
         <CellDefinition>
@@ -4329,137 +4329,137 @@
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
-          <RowIndex>15</RowIndex>
+          <RowIndex>13</RowIndex>
           <ParameterName>ParmServiceLine</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>1</ColumnIndex>
-          <RowIndex>15</RowIndex>
+          <RowIndex>13</RowIndex>
           <ParameterName>ParmProjectManager</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
-          <RowIndex>16</RowIndex>
+          <RowIndex>14</RowIndex>
           <ParameterName>ParmIncludeFundingSource</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>1</ColumnIndex>
-          <RowIndex>16</RowIndex>
+          <RowIndex>14</RowIndex>
           <ParameterName>ParmFundingSource</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
-          <RowIndex>18</RowIndex>
+          <RowIndex>15</RowIndex>
           <ParameterName>ParmProjectName</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>1</ColumnIndex>
-          <RowIndex>18</RowIndex>
+          <RowIndex>15</RowIndex>
           <ParameterName>ParmSortDetails</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
-          <RowIndex>19</RowIndex>
+          <RowIndex>16</RowIndex>
           <ParameterName>ParmIncludeFDI</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>1</ColumnIndex>
-          <RowIndex>19</RowIndex>
+          <RowIndex>16</RowIndex>
           <ParameterName>ParmIncludeProjectManager</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
-          <RowIndex>20</RowIndex>
+          <RowIndex>17</RowIndex>
           <ParameterName>ParmIncludeProjectPriority</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>1</ColumnIndex>
-          <RowIndex>20</RowIndex>
+          <RowIndex>17</RowIndex>
           <ParameterName>ParmIncludeStartFinish</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
-          <RowIndex>21</RowIndex>
+          <RowIndex>18</RowIndex>
           <ParameterName>ParmIncludeProjectStatus</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>1</ColumnIndex>
-          <RowIndex>21</RowIndex>
+          <RowIndex>18</RowIndex>
           <ParameterName>DisplayIssuesRisks</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
-          <RowIndex>22</RowIndex>
+          <RowIndex>19</RowIndex>
           <ParameterName>ParmDisplayItemsDecisions</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>1</ColumnIndex>
-          <RowIndex>22</RowIndex>
+          <RowIndex>19</RowIndex>
           <ParameterName>ParmOverdueKeyTasks</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
-          <RowIndex>23</RowIndex>
+          <RowIndex>20</RowIndex>
           <ParameterName>ParmDeliverables2</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>1</ColumnIndex>
-          <RowIndex>23</RowIndex>
+          <RowIndex>20</RowIndex>
           <ParameterName>ParmAccomplishments</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
-          <RowIndex>24</RowIndex>
+          <RowIndex>21</RowIndex>
           <ParameterName>ParmUpcomingKeyTasks</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>1</ColumnIndex>
-          <RowIndex>24</RowIndex>
+          <RowIndex>21</RowIndex>
           <ParameterName>ParmTaskComments</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
-          <RowIndex>25</RowIndex>
+          <RowIndex>22</RowIndex>
           <ParameterName>ParmDisplayProjectDescription</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>1</ColumnIndex>
-          <RowIndex>25</RowIndex>
+          <RowIndex>22</RowIndex>
           <ParameterName>DisplayPMNotes</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
-          <RowIndex>26</RowIndex>
+          <RowIndex>23</RowIndex>
           <ParameterName>DisplaySchdCom</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>1</ColumnIndex>
-          <RowIndex>26</RowIndex>
+          <RowIndex>23</RowIndex>
           <ParameterName>DisplayDelivCom</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
-          <RowIndex>27</RowIndex>
+          <RowIndex>24</RowIndex>
           <ParameterName>DisplayMilesCom</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>1</ColumnIndex>
-          <RowIndex>27</RowIndex>
+          <RowIndex>24</RowIndex>
           <ParameterName>DisplayProjectOutcomesExpected</ParameterName>
         </CellDefinition>
         <CellDefinition>
-          <ColumnIndex>0</ColumnIndex>
-          <RowIndex>29</RowIndex>
+          <ColumnIndex>1</ColumnIndex>
+          <RowIndex>25</RowIndex>
           <ParameterName>ParmLogo</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
-          <RowIndex>28</RowIndex>
+          <RowIndex>25</RowIndex>
           <ParameterName>ParmConfidential</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>1</ColumnIndex>
-          <RowIndex>3</RowIndex>
+          <RowIndex>2</RowIndex>
           <ParameterName>ParmIncludePlanView</ParameterName>
         </CellDefinition>
       </CellDefinitions>
